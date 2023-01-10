@@ -1,12 +1,11 @@
-
 namespace Day14StaQueue
 {
     class Program
     {
-       public  class QueueNode
+        public class QueueNode
         {
-          public  int data;
-          public  QueueNode next;
+            public int data;
+            public QueueNode next;
             public QueueNode(int data)
             {
                 this.data = data;
@@ -14,7 +13,7 @@ namespace Day14StaQueue
         }
 
         QueueNode root;
-
+     
         public void Enqueue(int data)
         {
             QueueNode newNode = new QueueNode(data);
@@ -33,7 +32,7 @@ namespace Day14StaQueue
 
         public int Dequeue()
         {
-             int Dequeued;
+            int Dequeued;
             if (root == null)
             {
                 Console.WriteLine("Stack is Empty");
@@ -41,13 +40,16 @@ namespace Day14StaQueue
             }
             else
             {
+
+                QueueNode temp = root;
                 while (root.next != null)
                 {
-                    
+                     temp = root;
                     root = root.next;
-                    
+
                 }
                 Dequeued = root.data;
+                root = temp;
                 return Dequeued;
             }
         }
@@ -71,10 +73,10 @@ namespace Day14StaQueue
             m.Enqueue(10);
             m.Enqueue(20);
             m.Enqueue(30);
-          
-                Console.WriteLine("Item Dequeueped from stack = " + m.Dequeue());
-                Console.WriteLine(m.peek() + " Returned by Peek operation");
             
+            Console.WriteLine("Item Dequeueped from stack = " + m.Dequeue());
+            Console.WriteLine(m.peek() + " Returned by Peek operation");
+
         }
     }
 
