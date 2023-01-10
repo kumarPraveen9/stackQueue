@@ -63,9 +63,9 @@ namespace Day14StaQueue
         public static void Main(String[] args)
         {
             Program m = new Program();
-            m.push(10);
-            m.push(20);
+            m.push(56);
             m.push(30);
+            m.push(70);
             while (m.root!=null)
             {
                 Console.WriteLine("Item popped from stack = " + m.pop());
